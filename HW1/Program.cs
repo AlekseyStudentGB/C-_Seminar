@@ -17,4 +17,4 @@ else
     max = b;
 }
 
-Console.WriteLine(max);
+Console.WriteLine($"наибольшее число = {max}");
