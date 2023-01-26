@@ -1,10 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
-int f = 3;
-int b = -4;
+Console.Write("Введите чило а : ");
+string  aStr = Console.ReadLine();
+int a = Convert.ToInt32(aStr);
+
+Console.Write("Введите чило b : ");
+string bStr = Console.ReadLine();
+int b = Convert.ToInt32(bStr);
+
 int max = 0;
-if (f > b)
+if (a > b)
 {
-    max = f;
+    max = a;
 }
 else
 {
