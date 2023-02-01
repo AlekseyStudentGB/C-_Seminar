@@ -35,7 +35,7 @@ int number = Convert.ToInt32(Console.ReadLine());
 if (number < 0) number = number * -1;
 int countsigns = CountNull(number);
 if (number < 100) Console.WriteLine("У заданного числа нет третьего знака :(");
-else 
+else
 {
  Console.WriteLine(WorkNumber(number, countsigns) - WorkNumber(number, countsigns) / 10 * 10);
 }
