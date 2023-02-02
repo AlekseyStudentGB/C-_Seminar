@@ -37,7 +37,7 @@ int countsigns = CountNull(number);
 if (number < 100) Console.WriteLine("У заданного числа нет третьего знака :(");
 else
 {
- Console.WriteLine(WorkNumber(number, countsigns) - WorkNumber(number, countsigns) / 10 * 10);
+ Console.WriteLine(WorkNumber(number, countsigns) % 10);
 }
 
 
