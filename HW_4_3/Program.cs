@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿int[] array = { 1, 2, 3 };
+
+
+Console.Write($"{array[2]},");
