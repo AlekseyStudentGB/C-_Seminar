@@ -26,15 +26,19 @@ void Initmatr(int[,] matr)
 
 void PrintMatr(int[,] matr)
 {
+    int n = 1;
     for (int i = 0; i < matr.GetLength(0); i++)
     {
+        Console.Write($"строка {n} : ");
+        n++;
+
         for (int j = 0; j < matr.GetLength(1); j++)
         {
             Console.Write($"{matr[i, j]} ");
         }
         Console.WriteLine();
     }
-    Console.WriteLine("________");
+    Console.WriteLine("________________________________");
 }
 
 void MaxRow(int[,] matr)
@@ -55,15 +59,9 @@ void MaxRow(int[,] matr)
             minSum = sumRow;
             positonMinSum = i;
         }
-
     }
-    Console.WriteLine(positonMinSum + 1);
+    Console.WriteLine($"Сумма эл. строки № {positonMinSum + 1} наименьшая.");
 }
-
-
-
-
-
 
 int[,] matr = new int[5, 4];
 Initmatr(matr);
