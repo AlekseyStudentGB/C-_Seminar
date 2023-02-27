@@ -74,7 +74,7 @@ PrintMatrix(resultmatr);
 Задача 65: Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
 M = 1; N = 5 -> "1, 2, 3, 4, 5"
 M = 4; N = 8 -> "4, 6, 7, 8"
-*/
+*//*
 
 int GetNumber(string msg)
 {
@@ -97,12 +97,102 @@ string WriteNubers(int m, int n)
     }
 }
 
+*/
+/*
+Задача 65: Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
+M = 1; N = 5 -> "1, 2, 3, 4, 5"
+M = 4; N = 8 -> "4, 6, 7, 8"
+*//*
+
+int GetNumber(string msg)
+{
+    Console.Write(msg);
+    int result = 0;
+    while (true)
+    {
+        if (int.TryParse(Console.ReadLine(), out result)) break;
+        else Console.WriteLine("НЕ КОРРЕКТНОЕ ЗНАЧЕНИЕ");
+    }
+    return result;
+}
+
+string WriteNubers(int n)
+{
+    if (n == 1) return ($"{n} ");
+    else 
+    {
+       return n.ToString() + "," + WriteNubers(n-1) ;
+    }
+}
 
 
+
+
+//int m = GetNumber("Введите M -> ");
+int n = GetNumber("Введите N -> ");
+Console.WriteLine(WriteNubers(n));
+*//*
+Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+
+M = 1; N = 15 -> 120
+M = 4; N = 8. -> 30
+
+*//*
+int GetNumber(string msg)
+{
+    Console.Write(msg);
+    int result = 0;
+    while (true)
+    {
+        if (int.TryParse(Console.ReadLine(), out result)) break;
+        else Console.WriteLine("НЕ КОРРЕКТНОЕ ЗНАЧЕНИЕ");
+    }
+    return result;
+}
+
+int WriteNubers(int m,int n)
+{
+    if (n == m) return (n);
+    else 
+    {
+        
+       return n + WriteNubers(m,n-1) ;
+    }
+}
+
+
+int m = GetNumber("Введите M -> ");
+int n = GetNumber("Введите N -> ");
+Console.WriteLine(WriteNubers(m,n));
+*////////////
+
+
+int GetNumber(string msg)
+{
+    Console.Write(msg);
+    int result = 0;
+    while (true)
+    {
+        if (int.TryParse(Console.ReadLine(), out result)) break;
+        else Console.WriteLine("НЕ КОРРЕКТНОЕ ЗНАЧЕНИЕ");
+    }
+    return result;
+}
+
+int WriteNubers(int m,int n)
+{
+  
+    if (m == 0) return n + 1;
+    if (m != 0 && n == 0) return WriteNubers(m - 1, 1);
+    if (m > 0 && n > 0) return WriteNubers(m - 1, WriteNubers(m, n - 1));
+return WriteNubers(m, n);
+}
 
 
 
 
 int m = GetNumber("Введите M -> ");
 int n = GetNumber("Введите N -> ");
-Console.WriteLine(WriteNubers(m,n));
+
+
+Console.WriteLine($" A({m},{n}) = {WriteNubers (m, n)}");
